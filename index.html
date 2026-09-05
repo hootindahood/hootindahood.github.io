@@ -1,691 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxim Chernyshenko — Senior Level Designer / Level Artist</title>
-    
-    <!-- Google Fonts & Material Symbols -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxim Chernyshenko — Senior Level Designer / Level Artist</title>
 
-    <style>
-        /* Pure Clean Material 3 Dark (Gemini Electric Blue) */
-        :root {
-            --bg-dark: #0f1117;
-            --surface-dark: #181a22;
-            --surface-card: #212431;
-            --surface-card-hover: #2a2e3f;
-            
-            --text-primary: #ffffff;
-            --text-secondary: #c3c6d1;
-            --text-subtle: #8e919e;
-            
-            /* Clean Gemini Electric Blue Accent */
-            --gemini-blue: #1a73e8;
-            --gemini-blue-light: #8ab4f8;
-            --gemini-blue-container: rgba(26, 115, 232, 0.15);
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-            --radius-hero: 28px;
-            --radius-card: 20px;
-            --radius-full: 9999px;
-        }
+  <style>
+    :root {
+      --bg-dark: #000000;
+      --surface-dark: #12131a;
+      --surface-card: #1c1e2a;
+      --surface-card-hover: #262a3a;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            border: none;
-            outline: none;
-        }
+      --text-primary: #ffffff;
+      --text-secondary: #c3c6d1;
+      --text-subtle: #8e919e;
 
-        body {
-            font-family: 'Roboto Flex', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 32px 16px;
-            display: flex;
-            justify-content: center;
-        }
+      --gemini-blue: #1a73e8;
+      --gemini-blue-light: #8ab4f8;
+      --gemini-blue-container: rgba(26, 115, 232, 0.15);
 
-        main {
-            max-width: 920px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+      --radius-hero: 28px;
+      --radius-card: 20px;
+      --radius-full: 9999px;
+    }
 
-        .material-symbols-outlined {
-            font-size: 20px;
-            vertical-align: middle;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+    }
 
-        /* Header Hero Block */
-        header {
-            background-color: var(--surface-dark);
-            border-radius: var(--radius-hero);
-            padding: 40px 36px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-        }
+    body {
+      font-family: 'Roboto Flex', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-optical-sizing: auto;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+    }
 
-        h1 {
-            font-size: 2.75rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
+    main {
+      max-width: 920px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
 
-        .subtitle {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gemini-blue-light);
-            margin-top: 4px;
-        }
+    .material-symbols-outlined {
+      font-size: 20px;
+      vertical-align: middle;
+    }
 
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
-        }
+    header {
+      background-color: var(--surface-dark);
+      border-radius: var(--radius-hero);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
 
-        /* Buttons with Google M3 Hover State */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 22px;
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-        }
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.1;
+    }
 
-        .btn-artstation {
-            background-color: var(--gemini-blue);
-            color: #ffffff;
-        }
+    .subtitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gemini-blue-light);
+      margin-top: 6px;
+    }
 
-        .btn-artstation:hover {
-            background-color: #3b82f6; /* Светлеет при наведении */
-            box-shadow: 0 4px 16px rgba(26, 115, 232, 0.35);
-        }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
 
-        .btn-surface {
-            background-color: var(--surface-card);
-            color: var(--text-primary);
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        .btn-surface:hover {
-            background-color: var(--surface-card-hover);
-        }
+    .btn-artstation {
+      background-color: var(--gemini-blue);
+      color: #ffffff;
+    }
 
-        /* Sections */
-        section {
-            background-color: var(--surface-dark);
-            border-radius: var(--radius-hero);
-            padding: 36px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+    .btn-artstation:hover {
+      background-color: #3b82f6;
+      box-shadow: 0 4px 16px rgba(26, 115, 232, 0.35);
+    }
 
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .btn-surface {
+      background-color: var(--surface-card);
+      color: var(--text-primary);
+    }
 
-        h2 .material-symbols-outlined {
-            color: var(--gemini-blue-light);
-        }
+    .btn-surface:hover {
+      background-color: var(--surface-card-hover);
+    }
 
-        /* Inner Cards */
-        .card {
-            background-color: var(--surface-card);
-            border-radius: var(--radius-card);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            transition: background-color 0.2s ease;
-        }
+    section {
+      background-color: var(--surface-dark);
+      border-radius: var(--radius-hero);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
 
-        .card:hover {
-            background-color: var(--surface-card-hover);
-        }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+    h2 .material-symbols-outlined {
+      color: var(--gemini-blue-light);
+    }
 
-        .company-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+    .card {
+      background-color: var(--surface-card);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background-color 0.2s ease;
+    }
 
-        .date-badge {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gemini-blue-light);
-            background-color: var(--gemini-blue-container);
-            padding: 4px 14px;
-            border-radius: var(--radius-full);
-        }
+    .card:hover {
+      background-color: var(--surface-card-hover);
+    }
 
-        .role {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--gemini-blue-light);
-        }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        .project-block {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 8px;
-        }
+    .company-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
 
-        .project-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .date-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gemini-blue-light);
+      background-color: var(--gemini-blue-container);
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+    }
 
-        .metric-badge {
-            font-size: 0.8rem;
-            background-color: var(--gemini-blue);
-            color: #ffffff;
-            padding: 2px 10px;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-        }
+    .role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gemini-blue-light);
+    }
 
-        ul {
-            padding-left: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .project-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
 
-        li {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        li::marker {
-            color: var(--gemini-blue-light);
-        }
+    .metric-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background-color: var(--gemini-blue);
+      color: #ffffff;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+    }
 
-        /* Key Skills (Unified M3 Style) */
-        .skills-category {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .skills-category-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--gemini-blue-light);
-            letter-spacing: 0.01em;
-        }
+    li {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+    li::marker {
+      color: var(--gemini-blue-light);
+    }
 
-        .skill-pill {
-            background-color: var(--surface-card);
-            color: var(--text-primary);
-            padding: 8px 16px;
-            border-radius: var(--radius-full);
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-        }
+    .skills-category {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        .skill-pill:hover {
-            background-color: var(--surface-card-hover);
-            color: var(--gemini-blue-light);
-            transform: translateY(-1px);
-        }
+    .skills-category-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gemini-blue-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
 
-        /* Languages Grid & Badge */
-        .lang-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-        }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        .lang-item {
-            background-color: var(--surface-card);
-            padding: 18px 22px;
-            border-radius: var(--radius-card);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.2s ease;
-        }
+    .skill-pill {
+      background-color: var(--surface-card);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
 
-        .lang-item:hover {
-            background-color: var(--surface-card-hover);
-        }
+    .skill-pill:hover {
+      background-color: var(--surface-card-hover);
+      color: var(--text-primary);
+    }
 
-        .lang-level {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--gemini-blue-light);
-            background-color: var(--gemini-blue-container);
-            padding: 4px 12px;
-            border-radius: var(--radius-full);
-        }
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
 
-        /* Personal Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-        }
+    .lang-item {
+      background-color: var(--surface-card);
+      padding: 18px 22px;
+      border-radius: var(--radius-card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
 
-        .project-card {
-            background-color: var(--surface-card);
-            padding: 18px;
-            border-radius: var(--radius-card);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            transition: background-color 0.2s ease;
-        }
+    .lang-item:hover {
+      background-color: var(--surface-card-hover);
+    }
 
-        .project-card:hover {
-            background-color: var(--surface-card-hover);
-        }
+    .lang-level {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gemini-blue-light);
+      background-color: var(--gemini-blue-container);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
 
-        .project-card-title {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
 
-        .project-card-desc {
-            font-size: 0.85rem;
-            color: var(--text-subtle);
-        }
+    .project-card {
+      background-color: var(--surface-card);
+      padding: 18px;
+      border-radius: var(--radius-card);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background-color 0.2s ease;
+    }
 
-        @media (max-width: 600px) {
-            header, section {
-                padding: 24px 20px;
-            }
-            h1 {
-                font-size: 2.1rem;
-            }
-            .card-header {
-                flex-direction: column;
-            }
-        }
-    </style>
+    .project-card:hover {
+      background-color: var(--surface-card-hover);
+    }
+
+    .project-card-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .project-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    @media (max-width: 600px) {
+      header, section {
+        padding: 24px 20px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .card-header {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <main>
-        
-        <!-- Header Hero -->
-        <header>
-            <div>
-                <h1>Maxim Chernyshenko</h1>
-                <div class="subtitle">Senior Level Designer / Level Artist</div>
-            </div>
-            
-            <div class="contact-links">
-                <a href="https://hootindahood.artstation.com/" target="_blank" class="btn btn-artstation">
-                    <span class="material-symbols-outlined">palette</span>
-                    ArtStation Portfolio
-                </a>
-                <a href="mailto:hootindahood@gmail.com" class="btn btn-surface">
-                    <span class="material-symbols-outlined">mail</span>
-                    Email
-                </a>
-                <a href="https://t.me/hootindahood" target="_blank" class="btn btn-surface">
-                    <span class="material-symbols-outlined">send</span>
-                    Telegram
-                </a>
-                <a href="https://hootindahood.itch.io" target="_blank" class="btn btn-surface">
-                    <span class="material-symbols-outlined">sports_esports</span>
-                    Itch.io
-                </a>
-            </div>
-        </header>
+  <main>
 
-        <!-- Experience -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">work</span>
-                Experience
-            </h2>
+    <header>
+      <div>
+        <h1>Maxim Chernyshenko</h1>
+        <div class="subtitle">Senior Level Designer / Level Artist</div>
+      </div>
 
-            <!-- Helio Games -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="company-title">Helio Games</div>
-                    <span class="date-badge">June 2024 - Present</span>
-                </div>
-                <div class="role">Senior Level Designer / Level Artist</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                    As the studio's only Level Designer and Level Artist, responsible for full-cycle level design and level art across three game projects, from initial prototypes and blockouts to final implementation, visual polish, and optimization.
-                </p>
+      <div class="contact-links">
+        <a href="https://hootindahood.artstation.com/" target="_blank" class="btn btn-artstation">
+          <span class="material-symbols-outlined">palette</span>
+          ArtStation Portfolio
+        </a>
+        <a href="mailto:hootindahood@gmail.com" class="btn btn-surface">
+          <span class="material-symbols-outlined">mail</span>
+          Email
+        </a>
+        <a href="https://t.me/hootindahood" target="_blank" class="btn btn-surface">
+          <span class="material-symbols-outlined">send</span>
+          Telegram
+        </a>
+        <a href="https://hootindahood.itch.io" target="_blank" class="btn btn-surface">
+          <span class="material-symbols-outlined">sports_esports</span>
+          Itch.io
+        </a>
+      </div>
+    </header>
 
-                <div class="project-block">
-                    <div class="project-title">Amikin Survival</div>
-                    <ul>
-                        <li>Joined the project at an early production stage, when it had only three existing locations, and rebuilt all three while creating seven additional major locations — ultimately creating or rebuilding all 10 major locations in the project.</li>
-                        <li>Owned the full production cycle of every major location from a blank canvas: reference gathering, concept development, blockout, terrain creation, level design, environment dressing, vegetation, prefab setup, lighting, visual polish, and final implementation.</li>
-                        <li>Created additional sub-locations for the major areas and a dedicated dungeon/cave, while coordinating a freelance Level Artist responsible for additional secondary cave locations.</li>
-                        <li>Worked closely with the Art Director to establish the visual direction and asset requirements, while independently executing the level design and level art for each environment.</li>
-                        <li>Collaborated with Tech Art to completely overhaul the location production pipeline, replacing a rigid Houdini-based workflow with flexible in-engine tools that significantly increased iteration speed and gave the Level Art / Level Design process much greater autonomy.</li>
-                        <li>As production progressed, took on increasing visual ownership, including texture matching, color and tonal consistency, and overall visual cohesion on later locations.</li>
-                        <li>Proactively coordinated with 3D artists to quickly adapt or modify existing props when needed, reducing production bottlenecks and keeping development moving.</li>
-                        <li>Consistently delivered work ahead of schedule, providing blockouts early enough for 3D assets, textures, and materials to be produced in parallel. Never missed a deadline.</li>
-                    </ul>
-                </div>
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">work</span>
+        Experience
+      </h2>
 
-                <div class="project-block">
-                    <div class="project-title">Westland Survival — Mini-Games Update</div>
-                    <ul>
-                        <li>Created the complete level art and environment dressing for six competitive mini-games, including Shooting Range, Hunting, Fishing, Racing, and other activities.</li>
-                        <li>Worked from gameplay prototypes, greyboxes, and visual references, independently transforming them into finished and visually distinct environments.</li>
-                        <li>Built the environments primarily from the existing project asset library, with only limited new 3D assets created specifically for the mini-games.</li>
-                        <li>Worked under strict mobile FPS and performance constraints while maintaining visual quality, composition, and gameplay readability.</li>
-                    </ul>
-                </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="company-title">Helio Games</div>
+          <span class="date-badge">June 2024 - Present</span>
+        </div>
+        <div class="role">Senior Level Designer / Level Artist</div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          As the studio's only Level Designer and Level Artist, responsible for full-cycle level design and level art across three game projects, from initial prototypes and blockouts to final implementation, visual polish, and optimization.
+        </p>
 
-                <div class="project-block">
-                    <div class="project-title">Mutiny: Pirate Survival — New Action-Arcade Ship Mode</div>
-                    <ul>
-                        <li>Designed and created the full environment for a new arcade-style ship mode set across a Caribbean-inspired open-water world.</li>
-                        <li>Built a large-scale environment containing 60 individual islands, designed around the game's third-person/top-down camera and strict mobile performance requirements.</li>
-                        <li>Created the island and underwater terrain in Gaea, optimized and chunked the geometry in Blender, and implemented the resulting environment in Unity.</li>
-                        <li>Owned the full level art process, including terrain, islands, vegetation, environment dressing, asset selection, texture matching, and visual composition.</li>
-                        <li>Provided visual feedback for the water shader in collaboration with Tech Art and proposed three gameplay mechanics to the Game Design team that were subsequently adopted and implemented in the final mode.</li>
-                    </ul>
-                </div>
+        <div class="project-block">
+          <div class="project-title">Amikin Survival</div>
+          <ul>
+            <li>Joined the project at an early production stage, when it had only three existing locations, and rebuilt all three while creating seven additional major locations — ultimately creating or rebuilding all 10 major locations in the project.</li>
+            <li>Owned the full production cycle of every major location from a blank canvas: reference gathering, concept development, blockout, terrain creation, level design, environment dressing, vegetation, prefab setup, lighting, visual polish, and final implementation.</li>
+            <li>Created additional sub-locations for the major areas and a dedicated dungeon/cave, while coordinating a freelance Level Artist responsible for additional secondary cave locations.</li>
+            <li>Worked closely with the Art Director to establish the visual direction and asset requirements, while independently executing the level design and level art for each environment.</li>
+            <li>Collaborated with Tech Art to completely overhaul the location production pipeline, replacing a rigid Houdini-based workflow with flexible in-engine tools that significantly increased iteration speed and gave the Level Art / Level Design process much greater autonomy.</li>
+            <li>As production progressed, took on increasing visual ownership, including texture matching, color and tonal consistency, and overall visual cohesion on later locations.</li>
+            <li>Proactively coordinated with 3D artists to quickly adapt or modify existing props when needed, reducing production bottlenecks and keeping development moving.</li>
+            <li>Consistently delivered work ahead of schedule, providing blockouts early enough for 3D assets, textures, and materials to be produced in parallel. Never missed a deadline.</li>
+          </ul>
+        </div>
 
-                <div class="project-block">
-                    <div class="project-title">Internal Studio R&D & AI-Assisted Prototyping</div>
-                    <ul>
-                        <li>Researched practical applications of AI and procedural tools for Level Design and Level Art, focusing on rapid environment prototyping rather than standalone concept generation.</li>
-                        <li>Developed a one-day workflow combining AI-generated location references and prop concepts, procedural terrain generation in Gaea, AI-generated 3D props and terrain materials, and final assembly in Unity.</li>
-                        <li>Built a semi-finished playable environment from scratch within a single working day as part of an internal studio hackathon.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="project-block">
+          <div class="project-title">Westland Survival — Mini-Games Update</div>
+          <ul>
+            <li>Created the complete level art and environment dressing for six competitive mini-games, including Shooting Range, Hunting, Fishing, Racing, and other activities.</li>
+            <li>Worked from gameplay prototypes, greyboxes, and visual references, independently transforming them into finished and visually distinct environments.</li>
+            <li>Built the environments primarily from the existing project asset library, with only limited new 3D assets created specifically for the mini-games.</li>
+            <li>Worked under strict mobile FPS and performance constraints while maintaining visual quality, composition, and gameplay readability.</li>
+          </ul>
+        </div>
 
-            <!-- Panoramik Games -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="company-title">Panoramik Games</div>
-                    <span class="date-badge">July 2023 - May 2024</span>
-                </div>
-                <div class="role">Level Designer / Level Artist</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                    Joined the project to support the Senior Level Designer during an early production stage, working on both level design and level art.
-                </p>
+        <div class="project-block">
+          <div class="project-title">Mutiny: Pirate Survival — New Action-Arcade Ship Mode</div>
+          <ul>
+            <li>Designed and created the full environment for a new arcade-style ship mode set across a Caribbean-inspired open-water world.</li>
+            <li>Built a large-scale environment containing 60 individual islands, designed around the game's third-person/top-down camera and strict mobile performance requirements.</li>
+            <li>Created the island and underwater terrain in Gaea, optimized and chunked the geometry in Blender, and implemented the resulting environment in Unity.</li>
+            <li>Owned the full level art process, including terrain, islands, vegetation, environment dressing, asset selection, texture matching, and visual composition.</li>
+            <li>Provided visual feedback for the water shader in collaboration with Tech Art and proposed three gameplay mechanics to the Game Design team that were subsequently adopted and implemented in the final mode.</li>
+          </ul>
+        </div>
 
-                <div class="project-block">
-                    <div class="project-title">
-                        Radiance
-                        <span class="metric-badge">100K+ Downloads</span>
-                    </div>
-                    <ul>
-                        <li>Worked alongside the Senior Level Designer on the full production of 15 game locations, sharing ownership of level design and level art from initial blockout through final implementation.</li>
-                        <li>Initially worked with the project's existing 2D tile-based environment workflow, including building a complete location with it. Together with the Senior Level Designer, identified the limitations of the approach and pushed for a transition to Unity Terrain as a faster, more flexible, and visually stronger solution for 3D environment production.</li>
-                        <li>Created and sculpted gameplay terrain directly in Unity, handling terrain shaping and painting as part of the new 3D environment workflow.</li>
-                        <li>Owned the full level art process for assigned locations, including terrain, environment dressing, vegetation, prop placement, composition, and later lighting.</li>
-                        <li>Developed a strong focus on visual composition and environmental presentation, creating location compositions and art solutions that were also reused and adapted across other areas of the project.</li>
-                        <li>Identified the need for a fading object shader to solve major readability issues caused by the fixed isometric camera, where dense environments could obscure the player, enemies, paths, props, and loot. Worked with Tech Art to push the feature through despite initial concerns about production cost and complexity.</li>
-                        <li>Collaborated closely with the Senior Level Designer, Producer, Game Designers, QA, Tech Art, and 3D artists to turn gameplay requirements and visual references into playable, production-ready environments.</li>
-                        <li>Contributed to the project's Technical Launch, which reached 100K+ downloads before development was discontinued due to budget constraints.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <div class="project-block">
+          <div class="project-title">Internal Studio R&D & AI-Assisted Prototyping</div>
+          <ul>
+            <li>Researched practical applications of AI and procedural tools for Level Design and Level Art, focusing on rapid environment prototyping rather than standalone concept generation.</li>
+            <li>Developed a one-day workflow combining AI-generated location references and prop concepts, procedural terrain generation in Gaea, AI-generated 3D props and terrain materials, and final assembly in Unity.</li>
+            <li>Built a semi-finished playable environment from scratch within a single working day as part of an internal studio hackathon.</li>
+          </ul>
+        </div>
+      </div>
 
-        <!-- Game Jams -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">extension</span>
-                Game Jam Projects
-            </h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="company-title">Panoramik Games</div>
+          <span class="date-badge">July 2023 - May 2024</span>
+        </div>
+        <div class="role">Level Designer / Level Artist</div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Joined the project to support the Senior Level Designer during an early production stage, working on both level design and level art.
+        </p>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="project-title">
-                        Witchfire
-                        <span class="metric-badge">Ranked 7th / 107</span>
-                    </div>
-                    <span class="date-badge">April - May 2023</span>
-                </div>
-                <div class="role">Gamebox Jam • Solo Developer</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">Solo-developed a complete playable game in 5 days, covering the entire development process from concept to final build.</p>
-                <ul>
-                    <li>Designed the core concept, gameplay mechanics, plot, script, and dialogues.</li>
-                    <li>Implemented gameplay logic and scripting in Unity.</li>
-                    <li>Designed the UX/UI and created all visual content for the game.</li>
-                    <li>Created the musical theme and selected sound effects.</li>
-                    <li>Ranked 7th out of 107 projects at Gamebox Jam.</li>
-                </ul>
-            </div>
+        <div class="project-block">
+          <div class="project-title">
+            Radiance
+            <span class="metric-badge">100K+ Downloads</span>
+          </div>
+          <ul>
+            <li>Worked alongside the Senior Level Designer on the full production of 15 game locations, sharing ownership of level design and level art from initial blockout through final implementation.</li>
+            <li>Initially worked with the project's existing 2D tile-based environment workflow, including building a complete location with it. Together with the Senior Level Designer, identified the limitations of the approach and pushed for a transition to Unity Terrain as a faster, more flexible, and visually stronger solution for 3D environment production.</li>
+            <li>Created and sculpted gameplay terrain directly in Unity, handling terrain shaping and painting as part of the new 3D environment workflow.</li>
+            <li>Owned the full level art process for assigned locations, including terrain, environment dressing, vegetation, prop placement, composition, and later lighting.</li>
+            <li>Developed a strong focus on visual composition and environmental presentation, creating location compositions and art solutions that were also reused and adapted across other areas of the project.</li>
+            <li>Identified the need for a fading object shader to solve major readability issues caused by the fixed isometric camera, where dense environments could obscure the player, enemies, paths, props, and loot. Worked with Tech Art to push the feature through despite initial concerns about production cost and complexity.</li>
+            <li>Collaborated closely with the Senior Level Designer, Producer, Game Designers, QA, Tech Art, and 3D artists to turn gameplay requirements and visual references into playable, production-ready environments.</li>
+            <li>Contributed to the project's Technical Launch, which reached 100K+ downloads before development was discontinued due to budget constraints.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="project-title">Horizon</div>
-                    <span class="date-badge">February - March 2023</span>
-                </div>
-                <div class="role">VK Game Jam • Game Designer / Team Lead</div>
-                <ul>
-                    <li>Developed the game concept, core mechanics, and gameplay logic.</li>
-                    <li>Contributed to gameplay balancing and UX/UI design.</li>
-                    <li>Created and maintained technical specifications for the development team, following tasks through to completion.</li>
-                    <li>Coordinated the production of game art, music, and sound.</li>
-                    <li>Worked closely with the team throughout all stages of development.</li>
-                </ul>
-            </div>
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">extension</span>
+        Game Jam Projects
+      </h2>
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="project-title">
-                        Erebos
-                        <span class="metric-badge">Ranked 3rd Overall</span>
-                    </div>
-                    <span class="date-badge">Sep 2022 - Jan 2023</span>
-                </div>
-                <div class="role">XYZ Game Jam • Game Designer / Level Artist</div>
-                <ul>
-                    <li>Developed the concept, mechanics, balance, plot, script, and game dialogues.</li>
-                    <li>Designed the level structure and visual direction.</li>
-                    <li>Created UX/UI and technical specifications for programmers, artists, and sound designers.</li>
-                    <li>Coordinated the production of game art, music, and sound while maintaining overall content quality.</li>
-                    <li>Led the project from initial concept through final playable version.</li>
-                    <li>Ranked 3rd overall at XYZ Game Jam.</li>
-                </ul>
-            </div>
-        </section>
+      <div class="card">
+        <div class="card-header">
+          <div class="project-title">
+            Witchfire
+            <span class="metric-badge">Ranked 7th / 107</span>
+          </div>
+          <span class="date-badge">April - May 2023</span>
+        </div>
+        <div class="role">Gamebox Jam • Solo Developer</div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">Solo-developed a complete playable game in 5 days, covering the entire development process from concept to final build.</p>
+        <ul>
+          <li>Designed the core concept, gameplay mechanics, plot, script, and dialogues.</li>
+          <li>Implemented gameplay logic and scripting in Unity.</li>
+          <li>Designed the UX/UI and created all visual content for the game.</li>
+          <li>Created the musical theme and selected sound effects.</li>
+          <li>Ranked 7th out of 107 projects at Gamebox Jam.</li>
+        </ul>
+      </div>
 
-        <!-- Education -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">school</span>
-                Education
-            </h2>
-            <div class="card">
-                <div class="card-header">
-                    <div class="company-title">XYZ School</div>
-                    <span class="date-badge">2022 - 2023</span>
-                </div>
-                <div class="role">Game Designer</div>
-                <ul>
-                    <li>Game and concept documentation</li>
-                    <li>Technical specifications and development planning</li>
-                    <li>Prototyping in Unreal Engine and Unity</li>
-                    <li>Visual scripting</li>
-                    <li>Vertical slice development</li>
-                    <li>Narrative and quest design</li>
-                    <li>Level design and blockout</li>
-                </ul>
-            </div>
-        </section>
+      <div class="card">
+        <div class="card-header">
+          <div class="project-title">Horizon</div>
+          <span class="date-badge">February - March 2023</span>
+        </div>
+        <div class="role">VK Game Jam • Game Designer / Team Lead</div>
+        <ul>
+          <li>Developed the game concept, core mechanics, and gameplay logic.</li>
+          <li>Contributed to gameplay balancing and UX/UI design.</li>
+          <li>Created and maintained technical specifications for the development team, following tasks through to completion.</li>
+          <li>Coordinated the production of game art, music, and sound.</li>
+          <li>Worked closely with the team throughout all stages of development.</li>
+        </ul>
+      </div>
 
-        <!-- Personal Projects -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">folder_special</span>
-                Personal Projects
-            </h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-card-title">Witchfire</div>
-                    <div class="project-card-desc">2D Point-and-Click Adventure</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-card-title">Mustiness</div>
-                    <div class="project-card-desc">2D Side-Scroller Metroidvania</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-card-title">Minutus</div>
-                    <div class="project-card-desc">3D Top-Down Walking Simulator</div>
-                </div>
-                <div class="project-card">
-                    <div class="project-card-title">Yav</div>
-                    <div class="project-card-desc">3D Third-Person Adventure</div>
-                </div>
-            </div>
-        </section>
+      <div class="card">
+        <div class="card-header">
+          <div class="project-title">
+            Erebos
+            <span class="metric-badge">Ranked 3rd Overall</span>
+          </div>
+          <span class="date-badge">Sep 2022 - Jan 2023</span>
+        </div>
+        <div class="role">XYZ Game Jam • Game Designer / Level Artist</div>
+        <ul>
+          <li>Developed the concept, mechanics, balance, plot, script, and game dialogues.</li>
+          <li>Designed the level structure and visual direction.</li>
+          <li>Created UX/UI and technical specifications for programmers, artists, and sound designers.</li>
+          <li>Coordinated the production of game art, music, and sound while maintaining overall content quality.</li>
+          <li>Led the project from initial concept through final playable version.</li>
+          <li>Ranked 3rd overall at XYZ Game Jam.</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- Key Skills -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">construction</span>
-                Key Skills
-            </h2>
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">school</span>
+        Education
+      </h2>
+      <div class="card">
+        <div class="card-header">
+          <div class="company-title">XYZ School</div>
+          <span class="date-badge">2022 - 2023</span>
+        </div>
+        <div class="role">Game Designer</div>
+        <ul>
+          <li>Game and concept documentation</li>
+          <li>Technical specifications and development planning</li>
+          <li>Prototyping in Unreal Engine and Unity</li>
+          <li>Visual scripting</li>
+          <li>Vertical slice development</li>
+          <li>Narrative and quest design</li>
+          <li>Level design and blockout</li>
+        </ul>
+      </div>
+    </section>
 
-            <div style="display: flex; flex-direction: column; gap: 24px;">
-                
-                <!-- Level Design -->
-                <div class="skills-category">
-                    <div class="skills-category-title">Level Design</div>
-                    <div class="skills-grid">
-                        <span class="skill-pill">Blockout & Whitebox</span>
-                        <span class="skill-pill">Gameplay Layout</span>
-                        <span class="skill-pill">Level Structure</span>
-                        <span class="skill-pill">Full-Cycle Level Production</span>
-                    </div>
-                </div>
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">folder_special</span>
+        Personal Projects
+      </h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-card-title">Witchfire</div>
+          <div class="project-card-desc">2D Point-and-Click Adventure</div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-title">Mustiness</div>
+          <div class="project-card-desc">2D Side-Scroller Metroidvania</div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-title">Minutus</div>
+          <div class="project-card-desc">3D Top-Down Walking Simulator</div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-title">Yav</div>
+          <div class="project-card-desc">3D Third-Person Adventure</div>
+        </div>
+      </div>
+    </section>
 
-                <!-- Level Art -->
-                <div class="skills-category">
-                    <div class="skills-category-title">Level Art</div>
-                    <div class="skills-grid">
-                        <span class="skill-pill">Terrain Sculpting & Painting</span>
-                        <span class="skill-pill">Environment Dressing</span>
-                        <span class="skill-pill">Vegetation</span>
-                        <span class="skill-pill">Prop Placement</span>
-                        <span class="skill-pill">Composition & Lighting</span>
-                        <span class="skill-pill">Visual Polish</span>
-                    </div>
-                </div>
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">construction</span>
+        Key Skills
+      </h2>
 
-                <!-- Environment Production -->
-                <div class="skills-category">
-                    <div class="skills-category-title">Environment Production</div>
-                    <div class="skills-grid">
-                        <span class="skill-pill">Unity Terrain</span>
-                        <span class="skill-pill">Procedural Terrain Generation</span>
-                        <span class="skill-pill">Performance-Conscious Level Design</span>
-                        <span class="skill-pill">Mobile Performance Optimization</span>
-                        <span class="skill-pill">Asset Integration</span>
-                    </div>
-                </div>
+      <div style="display: flex; flex-direction: column; gap: 24px;">
 
-                <!-- Game Development & Tools -->
-                <div class="skills-category">
-                    <div class="skills-category-title">Game Development & Tools</div>
-                    <div class="skills-grid">
-                        <span class="skill-pill">Unity</span>
-                        <span class="skill-pill">Unreal Engine</span>
-                        <span class="skill-pill">Visual Scripting</span>
-                        <span class="skill-pill">Blender</span>
-                        <span class="skill-pill">Gaea</span>
-                        <span class="skill-pill">Photoshop</span>
-                        <span class="skill-pill">Illustrator</span>
-                        <span class="skill-pill">Procreate</span>
-                        <span class="skill-pill">Aseprite</span>
-                    </div>
-                </div>
+        <div class="skills-category">
+          <div class="skills-category-title">Level Design</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Blockout & Whitebox</span>
+            <span class="skill-pill">Gameplay Layout</span>
+            <span class="skill-pill">Level Structure</span>
+            <span class="skill-pill">Full-Cycle Level Production</span>
+          </div>
+        </div>
 
-            </div>
-        </section>
+        <div class="skills-category">
+          <div class="skills-category-title">Level Art</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Terrain Sculpting & Painting</span>
+            <span class="skill-pill">Environment Dressing</span>
+            <span class="skill-pill">Vegetation</span>
+            <span class="skill-pill">Prop Placement</span>
+            <span class="skill-pill">Composition & Lighting</span>
+            <span class="skill-pill">Visual Polish</span>
+          </div>
+        </div>
 
-        <!-- Languages -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">translate</span>
-                Languages
-            </h2>
-            <div class="lang-grid">
-                <div class="lang-item">
-                    <strong style="color: var(--text-primary);">Russian</strong>
-                    <span class="lang-level">Native</span>
-                </div>
-                <div class="lang-item">
-                    <strong style="color: var(--text-primary);">English</strong>
-                    <span class="lang-level">B2</span>
-                </div>
-            </div>
-        </section>
+        <div class="skills-category">
+          <div class="skills-category-title">Environment Production</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Unity Terrain</span>
+            <span class="skill-pill">Procedural Terrain Generation</span>
+            <span class="skill-pill">Performance-Conscious Level Design</span>
+            <span class="skill-pill">Mobile Performance Optimization</span>
+            <span class="skill-pill">Asset Integration</span>
+          </div>
+        </div>
 
-        <!-- Summary -->
-        <section>
-            <h2>
-                <span class="material-symbols-outlined">person</span>
-                Summary
-            </h2>
-            <div class="card" style="gap: 16px;">
-                <p style="color: var(--text-secondary);">
-                    Hi! I'm Max, a Senior Level Designer and Level Artist specializing in full-cycle environment production — from a blank canvas and initial gameplay concept to a polished, optimized, shippable game space.
-                </p>
-                <p style="color: var(--text-secondary);">
-                    I bridge the gap between gameplay and visuals, combining level design, environment art, composition, lighting, and optimization to create engaging and visually cohesive game worlds. I am comfortable owning the entire production process independently: researching references, developing layouts and blockouts, building terrain, dressing environments, setting up prefabs, coordinating asset needs, and taking locations through final polish and release.
-                </p>
-                <p style="color: var(--text-secondary);">
-                    As the studio's only Level Designer and Level Artist, I have independently owned level production across its game portfolio, while collaborating closely with Art Direction, Game Design, Tech Art, and 3D artists. On <em>Amikin Survival</em>, I rebuilt the project's original locations and created its entire set of major environments from scratch, while working with Tech Art to overhaul the level production pipeline and significantly improve iteration speed, autonomy, and visual quality.
-                </p>
-                <p style="color: var(--text-secondary);">
-                    I am highly autonomous and adaptable, with a strong focus on production efficiency, visual quality, and practical problem-solving. I enjoy turning ambiguous or constrained ideas into finished game content, whether that means building large-scale environments under strict mobile performance budgets, creating complete level art from existing assets, or developing new procedural and AI-assisted workflows for rapid prototyping.
-                </p>
-            </div>
-        </section>
+        <div class="skills-category">
+          <div class="skills-category-title">Game Development & Tools</div>
+          <div class="skills-grid">
+            <span class="skill-pill">Unity</span>
+            <span class="skill-pill">Unreal Engine</span>
+            <span class="skill-pill">Visual Scripting</span>
+            <span class="skill-pill">Blender</span>
+            <span class="skill-pill">Gaea</span>
+            <span class="skill-pill">Photoshop</span>
+            <span class="skill-pill">Illustrator</span>
+            <span class="skill-pill">Procreate</span>
+            <span class="skill-pill">Aseprite</span>
+          </div>
+        </div>
 
-    </main>
+      </div>
+    </section>
+
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">translate</span>
+        Languages
+      </h2>
+      <div class="lang-grid">
+        <div class="lang-item">
+          <strong style="color: var(--text-primary);">Russian</strong>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <strong style="color: var(--text-primary);">English</strong>
+          <span class="lang-level">B2</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>
+        <span class="material-symbols-outlined">person</span>
+        Summary
+      </h2>
+      <div class="card" style="gap: 16px;">
+        <p style="color: var(--text-secondary);">
+          Hi! I'm Max, a Senior Level Designer and Level Artist specializing in full-cycle environment production — from a blank canvas and initial gameplay concept to a polished, optimized, shippable game space.
+        </p>
+        <p style="color: var(--text-secondary);">
+          I bridge the gap between gameplay and visuals, combining level design, environment art, composition, lighting, and optimization to create engaging and visually cohesive game worlds. I am comfortable owning the entire production process independently: researching references, developing layouts and blockouts, building terrain, dressing environments, setting up prefabs, coordinating asset needs, and taking locations through final polish and release.
+        </p>
+        <p style="color: var(--text-secondary);">
+          As the studio's only Level Designer and Level Artist, I have independently owned level production across its game portfolio, while collaborating closely with Art Direction, Game Design, Tech Art, and 3D artists. On <em>Amikin Survival</em>, I rebuilt the project's original locations and created its entire set of major environments from scratch, while working with Tech Art to overhaul the level production pipeline and significantly improve iteration speed, autonomy, and visual quality.
+        </p>
+        <p style="color: var(--text-secondary);">
+          I am highly autonomous and adaptable, with a strong focus on production efficiency, visual quality, and practical problem-solving. I enjoy turning ambiguous or constrained ideas into finished game content, whether that means building large-scale environments under strict mobile performance budgets, creating complete level art from existing assets, or developing new procedural and AI-assisted workflows for rapid prototyping.
+        </p>
+      </div>
+    </section>
+
+  </main>
 
 </body>
 </html>
