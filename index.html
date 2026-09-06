@@ -12,12 +12,12 @@
 
   <style>
     :root {
-      --bg-dark: #0d0d0d;
-      --header-bg: #141414;
+      --bg-dark: #000000;
+      --header-bg: #000000;
       
-      --surface-dark: #181818;
-      --surface-card: #222222;
-      --surface-card-hover: #2c2c2c;
+      --surface-dark: #121314;
+      --surface-card: #1e1f20;
+      --surface-card-hover: #28292a;
 
       --text-primary: #ffffff;
       --text-secondary: #b0b3b8;
@@ -90,6 +90,7 @@
       }
     }
 
+    /* Липкая шапка */
     .sticky-header {
       position: fixed;
       top: 0;
@@ -97,7 +98,6 @@
       width: 100%;
       height: 68px;
       background-color: var(--header-bg);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
@@ -108,6 +108,18 @@
       transition: opacity 0.25s ease;
     }
 
+    /* Градиент тени под шапкой (высота 4px, цвет #121314) */
+    .sticky-header::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to bottom, rgba(18, 19, 20, 1) 0%, rgba(18, 19, 20, 0) 100%);
+      pointer-events: none;
+    }
+
     .sticky-header.visible {
       opacity: 1;
       pointer-events: auto;
@@ -115,8 +127,8 @@
 
     .header-brand {
       display: flex;
-      align-items: baseline;
-      gap: 8px;
+      align-items: center;
+      margin-left: 16px;
     }
 
     .header-name {
@@ -124,12 +136,6 @@
       font-weight: 500;
       color: var(--text-primary);
       letter-spacing: -0.01em;
-    }
-
-    .header-role {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      font-weight: 400;
     }
 
     /* Контейнер навигации */
@@ -155,7 +161,7 @@
       pointer-events: none;
     }
 
-    /* Статичный круг по умолчанию (24x24) */
+    /* Статичный круг по умолчанию */
     .nav-trigger-dot {
       position: absolute;
       right: 0;
@@ -172,7 +178,7 @@
       opacity: 0;
     }
 
-    /* Слои овалов — строго 24px по высоте */
+    /* Слои овалов */
     .oval-layer {
       position: absolute;
       top: 0;
@@ -194,7 +200,6 @@
       transform-origin: right center;
     }
 
-    /* ВЫЛЕТ (Hover) — сделать более прозрачными (0.22) */
     .nav-safe-zone.menu-active .oval-layer {
       background-color: rgba(255, 255, 255, 0.22);
       animation: googleHoverPulse 0.20s var(--ease-google-out) forwards;
@@ -219,7 +224,6 @@
       }
     }
 
-    /* СКРЫТИЕ (Unhover) — быстрый плавный схлоп без лагов */
     .nav-safe-zone.is-closing .oval-layer {
       background-color: #ffffff;
       opacity: 1;
@@ -253,7 +257,7 @@
       }
     }
 
-    /* Иконки меню — идеальное центрирование по высоте овалов (24px) */
+    /* Иконки меню */
     .nav-icons-container {
       position: absolute;
       right: 112px;
@@ -317,15 +321,11 @@
       transition: transform 0.22s var(--ease-google-out), opacity 0.15s ease;
     }
 
-    .nav-safe-zone.menu-active .icon-chip:nth-child(4) { transition-delay: 0.00s; }
-    .nav-safe-zone.menu-active .icon-chip:nth-child(3) { transition-delay: 0.02s; }
-    .nav-safe-zone.menu-active .icon-chip:nth-child(2) { transition-delay: 0.04s; }
-    .nav-safe-zone.menu-active .icon-chip:nth-child(1) { transition-delay: 0.06s; }
+    .nav-safe-zone.menu-active .icon-chip:nth-child(2) { transition-delay: 0.00s; }
+    .nav-safe-zone.menu-active .icon-chip:nth-child(1) { transition-delay: 0.03s; }
 
     .nav-safe-zone:not(.menu-active) .icon-chip:nth-child(1) { transition-delay: 0.00s; }
-    .nav-safe-zone:not(.menu-active) .icon-chip:nth-child(2) { transition-delay: 0.02s; }
-    .nav-safe-zone:not(.menu-active) .icon-chip:nth-child(3) { transition-delay: 0.04s; }
-    .nav-safe-zone:not(.menu-active) .icon-chip:nth-child(4) { transition-delay: 0.05s; }
+    .nav-safe-zone:not(.menu-active) .icon-chip:nth-child(2) { transition-delay: 0.03s; }
 
     .icon-chip:hover::before {
       opacity: 1;
@@ -623,18 +623,28 @@
 
     @media (max-width: 680px) {
       .sticky-header {
-        height: auto;
-        padding: 12px 20px;
+        height: 60px;
+        padding: 0 16px;
       }
       .nav-safe-zone {
-        padding-right: 20px;
+        position: static;
+        height: auto;
+        padding: 0;
+      }
+      .nav-trigger-wrapper {
+        display: none;
       }
       .nav-icons-container {
-        right: 20px;
-        gap: 12px;
+        position: static;
+        pointer-events: auto;
+        overflow: visible;
+        gap: 8px;
+        padding-right: 0;
       }
-      .header-role {
-        display: none;
+      .icon-chip {
+        opacity: 1 !important;
+        transform: none !important;
+        width: 40px;
       }
       header.hero, section {
         padding: 24px 20px;
@@ -656,7 +666,6 @@
   <nav class="sticky-header" id="stickyHeader">
     <div class="header-brand">
       <span class="header-name">Maxim Chernyshenko</span>
-      <span class="header-role">Senior Level Designer / Level Artist</span>
     </div>
 
     <div class="nav-safe-zone" id="navSafeZone">
@@ -670,14 +679,8 @@
         <a href="https://hootindahood.artstation.com/" target="_blank" class="icon-chip" title="ArtStation">
           <span class="material-symbols-outlined">palette</span>
         </a>
-        <a href="mailto:hootindahood@gmail.com" class="icon-chip" title="Email">
-          <span class="material-symbols-outlined">mail</span>
-        </a>
         <a href="https://t.me/hootindahood" target="_blank" class="icon-chip" title="Telegram">
           <span class="material-symbols-outlined">send</span>
-        </a>
-        <a href="https://hootindahood.itch.io" target="_blank" class="icon-chip" title="Itch.io">
-          <span class="material-symbols-outlined">sports_esports</span>
         </a>
       </div>
     </div>
@@ -1020,6 +1023,8 @@
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
 
+      if (window.innerWidth <= 680) return;
+
       if (triggerDot && !navSafeZone.classList.contains('menu-active') && !navSafeZone.classList.contains('is-closing')) {
         const rect = triggerDot.getBoundingClientRect();
         const dotCenterX = rect.left + rect.width / 2;
@@ -1038,6 +1043,8 @@
     });
 
     navSafeZone.addEventListener('mouseleave', () => {
+      if (window.innerWidth <= 680) return;
+
       if (navSafeZone.classList.contains('menu-active')) {
         navSafeZone.classList.remove('menu-active');
         navSafeZone.classList.add('is-closing');
