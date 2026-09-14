@@ -156,6 +156,11 @@
       text-align: center;
     }
 
+    .hero-title-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .header-name {
       font-family: var(--font-content);
       font-size: 18px;
@@ -163,6 +168,7 @@
       line-height: 29.3px;
       color: var(--text-primary);
       letter-spacing: -0.01em;
+      text-decoration: none;
     }
 
     /* КОМПОНЕНТЫ И ЛЕЙАУТ */
@@ -349,7 +355,7 @@
     .skills-wrapper { width: 100%; display: flex; flex-direction: column; gap: 32px; padding: 0 36px; margin-bottom: 16px; }
     .skills-category { display: flex; flex-direction: column; gap: 14px; }
     .skills-category-title { font-family: var(--font-heading); font-size: 20px; font-weight: 700; line-height: 28px; color: var(--text-primary); }
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; } /* Отступы скиллов 12px */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; } 
     
     .skill-pill { 
       background-color: transparent; color: var(--text-primary); border: 2px solid var(--text-primary);
@@ -371,9 +377,9 @@
       .sticky-header { height: 60px; padding: 0 16px; }
       .nav-safe-zone { position: static; height: auto; padding: 0; }
       .trigger-dot, .morph-bg { display: none; }
-      .nav-stage { position: static; height: 36px; justify-content: center; margin-top: 0; }
-      .nav-icons { position: static; pointer-events: auto; gap: 8px; justify-content: center; }
-      .icon-chip { width: auto; padding: 0 16px; opacity: 1 !important; transform: none !important; border: none; }
+      .nav-stage { position: static; height: auto; justify-content: center; margin-top: 0; }
+      .nav-icons { position: static; pointer-events: auto; gap: 8px; justify-content: center; transform: none; }
+      .icon-chip { width: auto; padding: 0 16px; opacity: 1 !important; transform: none !important; border: 2px solid transparent; pointer-events: auto; }
       .nav-safe-zone.menu-active .left-chip, .nav-safe-zone.menu-active .right-chip { animation: none; }
       .reference-row { padding: 24px 16px; }
       
@@ -413,7 +419,7 @@
 
   <nav class="sticky-header" id="stickyHeader">
     <div class="header-brand">
-      <span class="header-name">Maxim Chernyshenko</span>
+      <a href="https://hootindahood.github.io/" class="header-name js-enlarge-cursor">Maxim Chernyshenko</a>
     </div>
 
     <div class="nav-safe-zone" id="navSafeZone">
@@ -445,7 +451,9 @@
       <div class="col-xs-12 row-xs--center row-xs--middle js-target">
         <div class="--content-wrapper Column_wrapper__I9Fan" style="--width: 66.66666666666666%;">
           <div class="--center parallax-wrap">
-            <h1 class="hero-title">Maxim Chernyshenko</h1>
+            <h1 class="hero-title">
+              <a href="https://hootindahood.github.io/" class="hero-title-link js-enlarge-cursor">Maxim Chernyshenko</a>
+            </h1>
             <p class="hero-subtitle" style="color: #FFFFFF;">Senior Level Designer / Level Artist</p>
             <div class="contact-links">
               <a href="https://hootindahood.artstation.com/" target="_blank" class="btn btn-outline">
@@ -691,7 +699,7 @@
       </div>
     </div>
 
-    <!-- KEY SKILLS -->
+    <!-- KEY SKILLS БЕЗ КАРТОЧКИ (НА ВСЮ ШИРИНУ) -->
     <div class="skills-wrapper">
       <div class="skills-category parallax-wrap">
         <div class="skills-category-title">Level Design</div>
@@ -745,6 +753,12 @@
   </main>
 
   <script>
+    /* Предотвращаем прыжок скролла при перезагрузке страницы на смартфонах */
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     /* Кастомный курсор */
     const cursor = document.getElementById('cursor');
     const iconChips = document.querySelectorAll('.icon-chip, .btn, .skill-pill');
@@ -782,7 +796,6 @@
         navSafeZone.classList.remove('menu-active');
         navSafeZone.classList.add('is-closing');
         clearTimeout(closingTimeout);
-        // Таймаут увеличен до 350мс для синхронизации с плавной CSS-анимацией закрытия
         closingTimeout = setTimeout(() => { navSafeZone.classList.remove('is-closing'); }, 350);
       }
     });
@@ -847,12 +860,11 @@
     const initH = window.innerHeight;
     const initEndY = initH * 0.45;
     const initStartY = initH * 1.1;
-    // Уменьшили силу эффекта
     const initMaxOffset = window.innerWidth > 680 ? 60 : 30;
 
     pData.forEach(data => {
       const rect = data.el.getBoundingClientRect();
-      const baseY = rect.top;
+      const baseY = rect.top + window.scrollY; // Фикс для восстановления позиции при перезагрузке
       let progress = (baseY - initEndY) / (initStartY - initEndY);
       progress = Math.max(0, Math.min(1, progress));
       data.targetY = initMaxOffset * progress;
